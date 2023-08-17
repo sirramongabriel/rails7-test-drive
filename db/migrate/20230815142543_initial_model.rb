@@ -3,6 +3,8 @@ class InitialModel < ActiveRecord::Migration[7.0]
     create_table :addresses do |t|
       t.string :street_address, null: false
       t.string :city, null: false
+      t.float  :lat
+      t.float  :long
       t.string :state, null: false
       t.string :zip_code, null: false
       t.string :addressable_id, null: false
