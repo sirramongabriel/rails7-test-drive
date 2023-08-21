@@ -6,7 +6,11 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-class Driver < ApplicationRecord
-  has_one :home_address, as: :addressable, class_name: 'Address', dependent: :destroy
-  has_many :rides
+FactoryGirl.define do
+  factory :driver do
+    
+  end
+
+  factory :invalid_driver, parent: :driver do
+  end
 end
