@@ -14,8 +14,7 @@ gem "puma", "~> 5.0"
 
 gem "faraday"
 
-gem "geocoder", "~> 1.3", ">= 1.3.7"
-
+gem "will_paginate", "~> 4.0"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
@@ -47,14 +46,8 @@ group :development, :test do
   gem "rspec-rails", "~> 6.0.0"
   gem "annotate"
   gem "ffaker"
-end
-
-group :development do
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
-end
-
-group :test do
   gem "shoulda-matchers", "~> 5.0"
 end
+
+
 
