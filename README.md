@@ -1,24 +1,82 @@
-# README
+# Hop Skip Test Drive Quickstart
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby 3.2.2
+Rails 7.0.7
 
-Things you may want to cover:
+Setup:
 
-* Ruby version
+- type `bundle isntall`
+- type `rails  db:create db:migrate db:seed`
+  - Seedfile displayes progress text & displays when complete
+- run tests with `rspec spec`
 
-* System dependencies
+# API::V1::RidesController
 
-* Configuration
+## Index
 
-* Database creation
+Fetches paginated rides for a driver ordered by score in descending order.
 
-* Database initialization
+URL: `/api/v1/rides`
 
-* How to run the test suite
+Method: `GET`
 
-* Services (job queues, cache servers, search engines, etc.)
+URL Params:
 
-* Deployment instructions
+`page=[integer]` - Optional page number for pagination
 
-* ...
+### Success Response:
+
+Code: `200`
+
+Content:
+
+json
+
+```json
+{
+  "status": 200,
+  "body": [
+    {
+      "id": 2,
+      "driver_id": 1,
+      "distance_in_miles": "5",
+      "duration_in_minutes": "15",
+      "commute_distance_in_miles": "2",
+      "commute_duration_in_minutes": "5",
+      "earnings": 12.0,
+      "score": 0.88,
+      "start_address_attributes": {
+        "addressable_id": 1,
+        "addressable_type": "Ride",
+        "street_address": "1745 T Street Southeast",
+        "city": "Washington",
+        "state": "DC",
+        "zip_code": "20020"
+      }
+    }
+  ]
+}
+```
+
+### Error Response:
+
+Condition: `Driver has no rides`
+
+Code: `400`
+
+Content:
+
+json
+
+```json
+{
+  "status": 400,
+  "body": "No rides available, please try again shortly"
+}
+```
+
+Notes:
+
+- Fetches rides for driver, ordered by score descending
+- Paginates results with page parameter (default page size is 20)
+- Returns error if driver has no rides
