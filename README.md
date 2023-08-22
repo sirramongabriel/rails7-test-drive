@@ -6,6 +6,7 @@ Rails 7.0.7
 Setup:
 
 - type `bundle isntall`
+- type `rails:credentials:edit` and add your api key to google: :maps_api_key
 - type `rails  db:create db:migrate db:seed`
   - Seedfile displayes progress text & displays when complete
 - run tests with `rspec spec`
@@ -80,3 +81,9 @@ Notes:
 - Fetches rides for driver, ordered by score descending
 - Paginates results with page parameter (default page size is 20)
 - Returns error if driver has no rides
+
+Considerations:
+
+- My thoughts on limiting external api usage while calculating the info
+  - I would have liked to use sidekiq/CRON jobs to schedule the requests instead of making them on-deman
+  - Or roll my own cache like system where I could check for latest timestamp before making a new request
