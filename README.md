@@ -85,5 +85,5 @@ Notes:
 Considerations:
 
 - My thoughts on limiting external api usage while calculating the info
-  - I would have liked to use sidekiq/CRON jobs to schedule the requests instead of making them on-deman
+  - Use sidekiq/CRON jobs to schedule the requests instead of making them on-deman
   - Or roll my own cache like system where I could check for latest timestamp before making a new request
