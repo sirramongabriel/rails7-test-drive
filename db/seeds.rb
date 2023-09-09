@@ -13,7 +13,7 @@ addresses = JSON.parse(File.read(Rails.root + "db/random_us_addresses.json"))
 ride_start_addresses = addresses.slice(0..121) # split total addresses 
 ride_destination_addresses = addresses.slice(122..245)
 
-driver = Driver.create!()
+driver = Driver.new
 driver.build_home_address(
   addressable_id: driver.id,
   street_address: "151 Main Street",
@@ -22,6 +22,7 @@ driver.build_home_address(
   zip_code: "31408"
 )
 
+driver.save
 rides = []
 122.times do
   ride = driver.rides.create!(
