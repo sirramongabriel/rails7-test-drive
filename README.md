@@ -4,10 +4,10 @@
 
 - Create a Rails 7 application, using Ruby 3+ Include the following entities:
 	- Ride
-	- Has an id, a start address and a destination address. You may end up adding additional information
+		- Has an id, a start address and a destination address. You may end up adding additional information
 	- Driver
-	- Has an id and a home address
-	- Build a RESTful API endpoint that returns a paginated JSON list of rides in descending score order for a given driver
+		- Has an id and a home address
+		- Build a RESTful API endpoint that returns a paginated JSON list of rides in descending score order for a given driver
 - Please write up API documentation for this endpoint in MarkDown or alternative Calculate the score of a ride in $ per hour as: `(ride earnings) / (commute duration + ride duration)`. 
 	- Higher is better
 	- Google Maps is expensive. 
