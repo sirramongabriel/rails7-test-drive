@@ -24,7 +24,7 @@ Setup:
 - type `bundle isntall`
 - type `rails:credentials:edit` and add your api key to google: :maps_api_key
 - type `rails  db:create db:migrate db:seed`
-  - Seedfile displayes progress text & displays when complete
+  - Seedfile displays progress text & displays when complete
 - run tests with `rspec spec`
 
 # API::V1::RidesController
